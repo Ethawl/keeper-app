@@ -4,6 +4,7 @@ import pg from "pg";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import jwf from "jsonwebtoken";
+import path from "path";
 
 const app = express();
 app.use(cors());
