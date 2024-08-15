@@ -5,12 +5,16 @@ import cors from "cors";
 import bcrypt from "bcrypt";
 import jwf from "jsonwebtoken";
 import path from "path";
+import { fileURLToPath } from 'url';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const PORT = process.env.PORT ?? 8000;
 env.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const db = new pg.Client({
     user: process.env.PG_USER,
